@@ -1,0 +1,53 @@
+.remaining {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: 5px solid aqua;
+    backdrop-filter: blur(90px);
+    z-index: -1;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+}
+.remaining h1 {
+    font-size: 2rem;
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#todo-input {
+    width: 70%;
+    padding:20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: auto 10%;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(90px);
+    color: aqua;
+    font-size: 17px;
+}
+#todo-input::placeholder {
+    color: white;
+}
+.todos {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 20px auto;
+}
+.card {
+    width: auto;
+    height: auto;
+    padding: 15px;
+    color: white;
+}
