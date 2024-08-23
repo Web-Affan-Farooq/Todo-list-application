@@ -1,0 +1,5 @@
+1. create side 
+2. create button to show and hide sidebar
+3. create progress section
+4. Add todo function with Add button and when add button is clicked , todos are added in the form of list below
+5. list is containing a widget that shows the main todo text content and  delete button and done button

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <style>
+    .todo {
+      display: flex;
+      align-items: center;
+    }
+    .todo.completed {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <ul id="todo-list"></ul>
+  <p id="percentage">Completed: 0%</p>
+
+  <script>
+    // Sample list of todos
+    const todos = [
+      { text: 'Learn JavaScript', completed: true },
+      { text: 'Learn TypeScript', completed: false },
+      { text: 'Build a to-do list app', completed: false }
+    ];
+
+    // Function to render the todo list
+    function renderTodos() {
+      const todoList = document.getElementById('todo-list');
+      todoList.innerHTML = ''; // Clear existing list
+      todos.forEach((todo, index) => {
+        const todoItem = document.createElement('li');
+        todoItem.className = `todo ${todo.completed ? 'completed' : ''}`;
+        todoItem.innerText = todo.text;
+        todoItem.onclick = () => toggleTodoStatus(index);
+        todoList.appendChild(todoItem);
+      });
+      updatePercentage();
+    }
+
+    // Function to toggle the completed status of a todo
+    function toggleTodoStatus(index) {
+      todos[index].completed = !todos[index].completed;
+      renderTodos();
+    }
+
+    // Function to calculate and display the percentage of completed todos
+    function updatePercentage() {
+      const completedTodos = todos.filter(todo => todo.completed).length;
+      const totalTodos = todos.length;
+      const percentage = totalTodos === 0 ? 0 : (completedTodos / totalTodos) * 100;
+      document.getElementById('percentage').innerText = `Completed: ${percentage.toFixed(2)}%`;
+    }
+
+    // Initial render
+    renderTodos();
+  </script>
+</body>
+</html>
